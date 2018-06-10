@@ -3,26 +3,30 @@ function giveItBackLater (value, callback) {
       callback(value)
     }
     setTimeout(loadComplete, 100)
+
 }
 
 
-promiseToGiveItBackLater(value)
-.then( value => giveItBackLater(value))
-
-function addSomePromises(somePromise) {
+function promiseToGiveItBackLater(value) {
   return new Promise((resolve, reject) => {
-    if (somePromise) {
-      resolve(somePromise.concat(somePromise))
-    } else {
-      reject(somePromise.concat(somePromise).concat(somePromise))
-    }
+  giveItBackLater(value, resolve)
   })
 }
-const outputPromise = addSomePromises(somePromise)
-outputPromise.then(successCallback, failureCallback)
+
+
+
+
+
+function addSomePromises(somePromise) {
+  return somePromise.then( string => string.concat(string))
+  .catch( string => string.concat(string).concat(string))
+}
+
+
+
 
 
 
 module.exports.giveItBackLater = giveItBackLater
 module.exports.addSomePromises = addSomePromises
-module.exports. promiseToGiveItBackLater = promiseToGiveItBackLater
+module.exports.promiseToGiveItBackLater = promiseToGiveItBackLater

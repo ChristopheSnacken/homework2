@@ -67,14 +67,14 @@ The app should be runnable simply by cloning the repository and running `yarn te
 
 ### Assignment 3: Asynchronous code
 
-1. You must create a module named `async-functions`. The test imports it with
+<!-- 1. You must create a module named `async-functions`. The test imports it with
     ```js
     const {
       giveItBackLater,
       addSomePromises,
       promiseToGiveItBackLater
     } = require("./async-functions")
-    ```
+    ``` -->
     _Note: There should be **3** named exports that should all be functions_
 1. The function `giveItBackLater` will be called with two parameters:
    ```js
