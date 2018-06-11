@@ -8,8 +8,8 @@ function giveItBackLater (value, callback) {
 
 
 function promiseToGiveItBackLater(value) {
-  return new Promise((resolve, reject) => {
-  giveItBackLater(value, resolve)
+  return new Promise((callback) => {
+  giveItBackLater(value, callback)
   })
 }
 
